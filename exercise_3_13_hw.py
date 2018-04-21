@@ -54,7 +54,9 @@ def gradient_descent(X,y,w0,lam):
 
         half = resu(X, y, w)
         half.shape = (2, 1)
-        grad = half + 2.0 * lam * w
+        ww=np.asarray([0,w[1]])
+        ww.shape=(2,1)
+        grad = half + 2.0 * lam * ww
 
         # take gradient step
         w = w - alpha*grad
